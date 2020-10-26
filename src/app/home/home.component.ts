@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   title = 'native-app';
   details: any  = [];
 
-  constructor(private homeService: HomeService) { }
+  constructor(public homeService: HomeService) { }
 
   ngOnInit() {
     this.homeService.getDetails().subscribe(res => {

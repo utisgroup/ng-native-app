@@ -15,6 +15,11 @@ import { AppSettings } from '../../config';
 
 export class HomeService {
 
+  // This is for testing purposes
+  getData(getData: any) {
+    throw new Error('Method not implemented.');
+  }
+
   API_URL = AppSettings.apiUrl;
 
   constructor(private http: HttpClient) { }
@@ -35,7 +40,7 @@ export class HomeService {
     return throwError("Something bad happened; please try again later.");
   }
 
-  // Getting hotel details -
+  // Getting details -
   getDetails() {
     const httpOptions = {
       headers: new HttpHeaders({
