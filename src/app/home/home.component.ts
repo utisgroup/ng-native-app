@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../shared/services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = 'native-app';
+  details: any  = [];
 
-  constructor() { }
+  constructor(private homeService: HomeService) { }
 
   ngOnInit() {
+    this.homeService.getDetails().subscribe(res => {
+      console.log('get details =', res);
+    })
   }
 }
